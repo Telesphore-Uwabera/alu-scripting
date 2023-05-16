@@ -9,8 +9,11 @@ end
 # Retrieve the argument
 input_string = ARGV[0]
 
-# Match the regular expression against the input string
-match = /School/.match(input_string)
+# Find all matches of "School" in the input string
+matches = input_string.scan(/School/)
 
-# Print the matched string or an empty string if no match
-puts match ? match[0] : ""
+# Concatenate the matches
+concatenated_string = matches.join
+
+# Print the concatenated string and its length
+puts "#{concatenated_string} (#{concatenated_string.length} chars long)"
