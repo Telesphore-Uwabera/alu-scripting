@@ -12,6 +12,5 @@ input_string = ARGV[0]
 # Match the regular expression against the input string
 match = input_string.match(/School/)
 
-# Print the matched string or an empty string if no match
-puts match ? match[0] : ""
-
+# Print the matched string
+puts ARGV[0].scan(/School/).join
