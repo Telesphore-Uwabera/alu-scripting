@@ -42,4 +42,10 @@ def count_words(subreddit, word_list, after='', hot_list=None):
                 if count > 0:
                     print("{}: {}".format(word.lower(), count))
         else:
-            count_words(subreddit, word_list, after, hot_list)
+            count_words(subreddit, word_list, after, hot_list[:])  # Pass a copy of hot_list
+
+
+# Example usage
+subreddit = 'unpopular'
+keywords = ['down', 'vote', 'downvote', 'you', 'her', 'unpopular', 'politics']
+count_words(subreddit, keywords)
